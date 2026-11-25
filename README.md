@@ -5,7 +5,35 @@ The offline build kit for the Docker image `readystack/moodle:v5.3.0-CE-ubuntu24
 - Release: [v5.3.0-CE-ubuntu24.04-r9](https://github.com/readystack-dev/moodle/releases/tag/v5.3.0-CE-ubuntu24.04-r9)
 - Image: [`docker.io/readystack/moodle:v5.3.0-CE-ubuntu24.04-r9`](https://hub.docker.com/r/readystack/moodle/tags), manifest digest `sha256:deb5fb50964cc048d1121b4562b98df1ed075bd4e7d25f953317a0c8f81fcb79`
 - Product page: https://readystack.dev/products/moodle
+- Source and build recipe: https://readystack.dev/products/moodle/recipe
+- Build trail: https://readystack.dev/products/moodle/trail/v5.3.0-CE-ubuntu24.04-r9
 - Defects: this repository's Issues (defects recorded from 25 November 2026 on) and https://readystack.dev/defects.html?product=moodle
+
+## The image
+
+Single container (Apache + mod_php, one foreground process) running the Moodle LMS. It REQUIRES an EXTERNAL MySQL 8.4+ / MariaDB 11.4+ database the operator provisions and points the container at via DB_HOST/DB_PORT/DB_NAME/DB_USER/DB_PASS — there is NO embedded/SQLite database. On first start Moodle runs `php admin/cli/install.php` to create config.php + all module schema (a multi-minute one-time install). NOT a multi-service cluster, but NOT self-contained: a MySQL/MariaDB server is a hard external dependency, and moodledata + the DB must persist.
+
+## Who uses Moodle and why
+
+Schools, universities, companies and other organisations that run online learning and training.
+
+Moodle is an open-source learning management system that gives educators, administrators and learners one integrated system for courses, activities, assignments, grading and progress tracking.
+
+A typical use: A company trains staff in several offices. In Moodle the training team builds self-paced courses with forums and assignments, enrols each group of staff in the courses for their role, and tracks who has completed which course.
+
+From the upstream project's own description: https://github.com/moodle/moodle, https://docs.moodle.org/en/About_Moodle, https://docs.moodle.org/en/Features.
+
+## This release
+
+- Docker Scout policy grade at release: **A** (94%), graded 2026-11-25 with `docker scout policy` (CLI 1.26.0, docker-default configuration).
+  - Docker Scout counts 134 packages with copyleft licences (GPL, LGPL, MPL), all of them operating-system packages (it counts only packages whose licence it can read; the SBOM lists every component).
+- Signed with ReadyStack's release key (fingerprint `04daa92344a52dbc`): https://readystack.dev/keys/cosign.pub.
+- Runs as a non-root user (`www-data`).
+- Attestations on the image: an SPDX SBOM and SLSA provenance v1.
+- Rebuilt from this kit with network egress blocked on 2026-11-25; the rebuilt image digest is the published one.
+- Base: Ubuntu 24.04.
+
+The current grade, measured again every day, is on https://readystack.dev/products/moodle.
 
 Moodle is distributed under its upstream licence (GPL-3.0-or-later); the kit contains upstream's source under that licence, and each vendored component under its own.
 
@@ -39,3 +67,5 @@ The build trail (`ReadyStack-moodle-v5.3.0-CE-ubuntu24.04-r9.trail.json`, signed
 ## This repository
 
 `recipe/` holds the kit's recipe files (Dockerfiles, build scripts, pins) as published at https://readystack.dev/products/moodle/recipe. The complete kit is the release download. Each release is a tag here.
+
+— ReadyStack · https://readystack.dev
