@@ -1,0 +1,308 @@
+{
+ "schema": "readystack.recipe.v1",
+ "slug": "moodle",
+ "tag": "v5.3.0-CE-ubuntu24.04-r9",
+ "tarball": "ReadyStack-moodle-v5.3.0-CE-ubuntu24.04-r9.tar.gz",
+ "tarball_sha256": "ee940ac2bed46dc094ff5aee332d4cef9c8d25886ac29d49b6e6f105d5435c0b",
+ "kit_root": "v5.3.0-CE-ubuntu24.04-r9",
+ "generated_at": "2026-11-25T06:45:24Z",
+ "generator": "KitForge release/recipe_publish.py",
+ "dockerfile": "Dockerfile.offline.pinned",
+ "build_script": "BUILD_OFFLINE.sh",
+ "preview_lines": 24,
+ "pins": {
+  "upstream": {
+   "repo": "https://github.com/moodle/moodle",
+   "ref": "v5.3.0",
+   "commit": "42622298fe06f9626d988d60b2bf589bd8f850e8",
+   "url": "https://github.com/moodle/moodle/tree/42622298fe06f9626d988d60b2bf589bd8f850e8",
+   "from": "docs/provenance/BUILD_RECIPE.json"
+  },
+  "fetches": [
+   {
+    "kind": "git",
+    "url": "https://github.com/moodle/moodle",
+    "ref": "v5.3.0"
+   }
+  ],
+  "bases": [
+   {
+    "ref": "ubuntu:24.04@sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289",
+    "image": "ubuntu:24.04",
+    "digest": "sha256:9c7f200c07e3d4a03e7249d2c16bf66a51120fb876aa2242cf31451412543289"
+   }
+  ],
+  "toolchain": {
+   "buildkit": "moby/buildkit:v0.31.2",
+   "buildkit_image_digest": "sha256:e0e67ea9c4bb07bdef683e29f70f3b623d1eb9c82274a9ec04e6bb0511449fb0"
+  },
+  "build_method": "source-rebuild-php",
+  "source_date_epoch": 1795543305,
+  "source_date_epoch_utc": "2026-11-24T18:01:45Z",
+  "target": {
+   "image_manifest_digest": "sha256:deb5fb50964cc048d1121b4562b98df1ed075bd4e7d25f953317a0c8f81fcb79",
+   "config_digest": "sha256:bff6bb87cacd11b490eee04c5295d4c2b5d4c0a18751d5bafd4544a41c09f767",
+   "image": "readystack/moodle:v5.3.0-CE-ubuntu24.04-r9"
+  },
+  "checksummed_files": 135354
+ },
+ "files": [
+  {
+   "path": "BASES.tsv",
+   "size": 121,
+   "sha256": "c506d719c30d576fe42dd46d1cf2a9a05f4f3f364b41e02e4ffad3a1fc19500e",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "BUILD_OFFLINE.sh",
+   "size": 8856,
+   "sha256": "6ab4f08a6ec775b32d854f03413b30ecfe555ddba78cf0de956235f5a2a39542",
+   "lines": 162,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "CHECKSUMS.sha256",
+   "size": 22043630,
+   "sha256": "8b13709cf2fb4a09d2bf7e19fa53c0dc2fd3249c1723b14f14ad102ecc74fb14",
+   "lines": 135354,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "DOCKERFILE_NAME.txt",
+   "size": 26,
+   "sha256": "9aadd1ede68e016a6f163c97befc5ff2fcdc8ebd4f84b108dba63cb195fa8c84",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "Dockerfile",
+   "size": 5184,
+   "sha256": "a76b0ef31afb28d4d2c8a89a4f13e0aeabb43d1acfd212a05781dfb96d37a759",
+   "lines": 62,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline",
+   "size": 5184,
+   "sha256": "a76b0ef31afb28d4d2c8a89a4f13e0aeabb43d1acfd212a05781dfb96d37a759",
+   "lines": 62,
+   "public": "account"
+  },
+  {
+   "path": "Dockerfile.offline.pinned",
+   "size": 5184,
+   "sha256": "a76b0ef31afb28d4d2c8a89a4f13e0aeabb43d1acfd212a05781dfb96d37a759",
+   "lines": 62,
+   "public": "preview",
+   "preview_lines": 24
+  },
+  {
+   "path": "Dockerfile.vendor",
+   "size": 1540,
+   "sha256": "80aa0120b2843e32852c904fc559c37a6ac613a781bea921556dc648e81653fd",
+   "lines": 20,
+   "public": "account"
+  },
+  {
+   "path": "FILE_MODES.tsv",
+   "size": 14892967,
+   "sha256": "a288211b9ee77a3741fa13f8022eaf57be0af2d1eb51eb371b35bd81d6403a6c",
+   "lines": 157226,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "MANIFEST.txt",
+   "size": 12839588,
+   "sha256": "89697788cdba25d9180abacda9906dbb450c53ec66fbb6ffe1df75cbfb5d6aeb",
+   "lines": 135356,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "README.md",
+   "size": 3283,
+   "sha256": "732d2035c7ee71b3e2249578c1819112f2f15f25caf4d443bd7488847fb642a8",
+   "lines": 39,
+   "public": "account"
+  },
+  {
+   "path": "SOURCE_DATE_EPOCH.txt",
+   "size": 11,
+   "sha256": "24978ae67584db5db65c2361e998b18e5f5e811181150ddb1f187e1e4496405d",
+   "lines": 1,
+   "public": "full"
+  },
+  {
+   "path": "TARGET_DIGEST.txt",
+   "size": 436,
+   "sha256": "cabf3ddbe976a343e73a16761a2b8167b7c670ef1802183723207bca22e894a7",
+   "lines": 8,
+   "public": "full"
+  },
+  {
+   "path": "VERIFY_OFFLINE.sh",
+   "size": 10153,
+   "sha256": "3e8184ea230cfd8f41f977e26be6bf7bd03112c396c517837ce0c7de4f7399dd",
+   "lines": 165,
+   "public": "account"
+  },
+  {
+   "path": "apache2-foreground",
+   "size": 732,
+   "sha256": "003f1949772aed38f5bc2cc4dd3193b3277f979735fd94bb18b863169b3c260d",
+   "lines": 18,
+   "public": "account"
+  },
+  {
+   "path": "docker-entrypoint.sh",
+   "size": 3980,
+   "sha256": "6c39c4adc58d47ca59d9cbd7f0708cb370aef9aa3b6b442779610025665af4f6",
+   "lines": 62,
+   "public": "account"
+  },
+  {
+   "path": "docs/PROVENANCE.md",
+   "size": 2614,
+   "sha256": "7ec800e19299b83735dbecffae3ac390b085fd568a80f1cba0ccef88d3efe761",
+   "lines": 36,
+   "public": "account"
+  },
+  {
+   "path": "docs/REBUILD.md",
+   "size": 6175,
+   "sha256": "701e2bc619371062e6c843bcd7471fb57d568db88f64fa26f40bba28f39a3732",
+   "lines": 62,
+   "public": "account"
+  },
+  {
+   "path": "docs/VERIFY.md",
+   "size": 2024,
+   "sha256": "02b9b9ed7ca3d6bb5b13699e443f4a7ef50eff6875444005d42671d5d529ce73",
+   "lines": 34,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/BASE_IMAGE_DIGESTS.lock",
+   "size": 49,
+   "sha256": "633f640a38b5742dd3e42b73904948c3efe00a2bc72e05c68f2e9631c61afd5b",
+   "lines": 2,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/BUILD_RECIPE.json",
+   "size": 3658,
+   "sha256": "d87c668d4300ab4c2c01c490fff2e05e1f5c5f879e46b3de6521443076db0bdc",
+   "lines": 78,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/CUSTODY_INPUTS.json",
+   "size": 644,
+   "sha256": "113973b91dfaaada3624dd18f017a70ce8c1535d319336922ffdfd87b6f51ba4",
+   "lines": 17,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/SOURCE_FILE_MANIFEST.json",
+   "size": 315109,
+   "sha256": "85454735b647c21ce91cb308b9898d708db1d8ebd67d11b6b7e5ef881e12d3a4",
+   "lines": 5007,
+   "public": "account",
+   "stored": "gzip"
+  },
+  {
+   "path": "docs/provenance/SOURCE_TREE_HASH.json",
+   "size": 303,
+   "sha256": "4f285eb6700d958c64670de6974c618954c06d0c11d4d091d8b00e5cff2aaa25",
+   "lines": 9,
+   "public": "full"
+  },
+  {
+   "path": "docs/provenance/SYSTEM_PINNING.lock",
+   "size": 166,
+   "sha256": "44667b59906463e70f3c47f9a678fdc930732ec94e53d932b0fd9daa36df8a07",
+   "lines": 14,
+   "public": "account"
+  },
+  {
+   "path": "docs/provenance/TOOLCHAIN.lock",
+   "size": 4668,
+   "sha256": "47dddade6e868817523cde86d79af0d0a295ae939f1871917058568dc02a0214",
+   "lines": 162,
+   "public": "account"
+  },
+  {
+   "path": "moodle-vhost.conf",
+   "size": 291,
+   "sha256": "993730174fc9d804b3c242ca09a222b0b2409958b7fdea39d1b77dff304d21f7",
+   "lines": 10,
+   "public": "account"
+  },
+  {
+   "path": "moodle.ini",
+   "size": 513,
+   "sha256": "0b79fbf05f80703422f6d8fa8f97906ee8939867abee60a76769da066cc8e817",
+   "lines": 12,
+   "public": "account"
+  },
+  {
+   "path": "readystack-mod-php.conf",
+   "size": 390,
+   "sha256": "f8eb513ee5aeec1252dd78f55dab6585ba27cad8b958b89190de7593103d2bba",
+   "lines": 9,
+   "public": "account"
+  },
+  {
+   "path": "readystack-php.conf",
+   "size": 396,
+   "sha256": "d15053c81ce9cba0fdd7c17d7b7456c844629b12ab521b072033baee92655a93",
+   "lines": 13,
+   "public": "account"
+  },
+  {
+   "path": "readystack-php.ini",
+   "size": 281,
+   "sha256": "a6b6e823b84e85b51b368f40de925bea7fcc1c63991e09fcff27fe5705c136ca",
+   "lines": 3,
+   "public": "account"
+  },
+  {
+   "path": "rebuild.json",
+   "size": 1212,
+   "sha256": "7790f670cef8eb9f441a3d77ce00b0587e6ab816b0848df784242567aa6f18fb",
+   "lines": 31,
+   "public": "account"
+  },
+  {
+   "path": "toolchain/BUILDKIT_TAG.txt",
+   "size": 22,
+   "sha256": "fcd530eeb02b063d2f047adad6eef896422a8e8d558513e5f09b2a262be32573",
+   "lines": 1,
+   "public": "full"
+  }
+ ],
+ "skipped": [],
+ "kit_adds": {
+  "bases": {
+   "files": 5,
+   "bytes": 29796854
+  },
+  "docs": {
+   "files": 67652,
+   "bytes": 469005750
+  },
+  "toolchain": {
+   "files": 1,
+   "bytes": 111529472
+  },
+  "vendored": {
+   "files": 67665,
+   "bytes": 507453352
+  }
+ },
+ "redacted_files": 0
+}

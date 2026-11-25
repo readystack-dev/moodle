@@ -1,0 +1,78 @@
+{
+  "schema": "kitforge.build_recipe.v1",
+  "slug": "moodle",
+  "image": "readystack/moodle:v5.3.0-CE-ubuntu24.04-r9",
+  "build_method": "source-rebuild-php",
+  "source": {
+    "repo": "https://github.com/moodle/moodle",
+    "ref": "v5.3.0",
+    "php_version": "8.3",
+    "_php_version_note": "public/admin/environment.xml (Moodle 5.2) and public/lib/phpminimumversionlib.php require PHP >= 8.3.0, as does composer.json. Since 2026-10-10 the image runs Ubuntu 24.04's own PHP 8.3 (it reports 8.3.6; Ubuntu backports security fixes into it) instead of the official php:8.4-apache-bookworm image, whose Debian 12 base our cerodeo-v1 scan grades F on vulnerabilities Debian does not fix. That is exactly Moodle 5.2's floor, so a Moodle release that raises it cannot run on this image. PHP 8.4 on Ubuntu 24.04 would need a third-party archive (a PPA): a supply-chain decision, not taken here; preflight check_php BLOCKs a retarget whose source needs more than the image's PHP.",
+    "build_packages": [
+      "git",
+      "unzip",
+      "ca-certificates"
+    ],
+    "php_extensions": [
+      "iconv",
+      "mbstring",
+      "curl",
+      "openssl",
+      "ctype",
+      "zip",
+      "zlib",
+      "gd",
+      "simplexml",
+      "spl",
+      "pcre",
+      "dom",
+      "xml",
+      "xmlreader",
+      "intl",
+      "json",
+      "hash",
+      "fileinfo",
+      "sodium",
+      "filter",
+      "tokenizer",
+      "soap",
+      "exif",
+      "mysqli",
+      "opcache"
+    ],
+    "_ext_note": "Moodle 5.2 extensions (public/admin/environment.xml): required iconv mbstring curl openssl ctype zip zlib gd simplexml spl pcre dom xml xmlreader intl json hash fileinfo sodium filter, optional tokenizer soap exif; plus the NATIVE mysqli driver (lib/dml/mysqli_native_moodle_database.php, NOT pdo_mysql) and opcache. source.php_extensions lists exactly these and the build asserts each is loaded in both the Apache and the CLI configuration. They come from Ubuntu's packages (runtime_packages): php8.3-gd, -intl, -zip, -soap, -mysql (which also carries pdo_mysql, unused by Moodle), -curl, -mbstring, -xml; sodium and opcache with php8.3-cli, exif/iconv/ctype/fileinfo/tokenizer with php8.3-common. Nothing is compiled.",
+    "prune_paths": [
+      ".git",
+      ".github"
+    ],
+    "app_copies": [
+      {
+        "src": ".",
+        "dst": "/var/www/html"
+      }
+    ],
+    "_app_copies_note": "Copy the WHOLE Moodle tree to /var/www/html \u2014 the app spans root-level admin/ (incl admin/cli/install.php), lib/, config-dist.php AND public/ (the webroot). NO composer vendor/ dir to copy (Moodle's runtime PHP libs are already in-tree under public/lib/). NO composer_install_cmd => the renderer emits no composer step. NO frontend block => no npm/grunt (AMD assets pre-built in the tag).",
+    "source_date_epoch": 1795543305,
+    "source_date_epoch_provenance": "the time release v5.3.0-CE-ubuntu24.04-r9 was cut (2026-11-24T18:01:45Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 42622298fe06, dated 2026-10-03T09:34:45Z (source.commit_epoch).",
+    "commit": "42622298fe06f9626d988d60b2bf589bd8f850e8",
+    "source_date_epoch_basis": "release-cut",
+    "commit_epoch": 1791020085
+  },
+  "binaries_from_source": null,
+  "runtime_packages": [
+    "apache2",
+    "libapache2-mod-php8.3",
+    "php8.3-cli",
+    "php8.3-curl",
+    "php8.3-mbstring",
+    "php8.3-xml",
+    "php8.3-gd",
+    "php8.3-intl",
+    "php8.3-zip",
+    "php8.3-soap",
+    "php8.3-mysql",
+    "ca-certificates",
+    "curl",
+    "tzdata"
+  ]
+}

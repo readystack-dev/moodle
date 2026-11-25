@@ -1,0 +1,8 @@
+image_manifest_digest=sha256:deb5fb50964cc048d1121b4562b98df1ed075bd4e7d25f953317a0c8f81fcb79
+config_digest=sha256:bff6bb87cacd11b490eee04c5295d4c2b5d4c0a18751d5bafd4544a41c09f767
+tag=readystack/moodle:v5.3.0-CE-ubuntu24.04-r9
+probe_port=8080
+probe_path=/login/index.php
+probe_timeout=900
+verify_boot=skip
+verify_boot_reason=this image needs db (not part of this archive); boot it with your own services as the admin handbook describes

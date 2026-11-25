@@ -1,0 +1,9 @@
+{
+  "schema": "kitforge.source_tree_hash.v1",
+  "slug": "moodle",
+  "repo": "https://github.com/moodle/moodle",
+  "ref": "v5.3.0",
+  "commit": "42622298fe06f9626d988d60b2bf589bd8f850e8",
+  "tree_listing_sha256": "096a48537238e07dd94531ff70477bcaca97e3f58f53ae8baf8ad50c8a5c708f",
+  "file_count": 67589
+}
