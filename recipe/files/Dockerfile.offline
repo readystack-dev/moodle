@@ -33,7 +33,7 @@ RUN chmod 0755 /usr/local/bin/apache2-foreground && \
 RUN for sapi in apache2 cli; do \
       PHP_INI_SCAN_DIR=/etc/php/8.3/$sapi/conf.d php -c /etc/php/8.3/$sapi/php.ini -r '$m = array_map("strtolower", array_merge(get_loaded_extensions(), get_loaded_extensions(true))); $x = array_diff(array_slice($argv, 1), $m); if ($x) { fwrite(STDERR, "missing PHP extensions: " . implode(", ", $x) . "\n"); exit(1); }' "iconv" "mbstring" "curl" "openssl" "ctype" "zip" "zlib" "gd" "simplexml" "spl" "pcre" "dom" "xml" "xmlreader" "intl" "json" "hash" "fileinfo" "sodium" "filter" "tokenizer" "soap" "exif" "mysqli" "zend opcache" || { echo "for the $sapi configuration"; exit 1; }; \
     done
-ARG SOURCE_DATE_EPOCH=1795543305
+ARG SOURCE_DATE_EPOCH=1795614453
 RUN (getent passwd www-data >/dev/null 2>&1 || (groupadd -r www-data && useradd -r -g www-data -d /var/www/html www-data)) && \
     mkdir -p /var/www/moodledata /var/run/apache2 /var/lock/apache2 /var/log/apache2 && \
     : "${SOURCE_DATE_EPOCH:?SOURCE_DATE_EPOCH must be set for a reproducible build}" && \
@@ -49,10 +49,10 @@ RUN chown -R www-data:www-data /var/www/moodledata /var/run/apache2 /var/lock/ap
 LABEL org.opencontainers.image.title="Moodle"
 LABEL org.opencontainers.image.source="https://github.com/moodle/moodle"
 LABEL org.opencontainers.image.licenses="GPL-3.0-or-later"
-LABEL org.opencontainers.image.version="v5.3.0-CE-ubuntu24.04-r9"
+LABEL org.opencontainers.image.version="v5.3.1-CE-ubuntu24.04-r1"
 LABEL org.opencontainers.image.description="Moodle — the world's open-source learning management system (GPL-3.0, PHP)."
 LABEL org.opencontainers.image.vendor="Moodle Pty Ltd"
-LABEL org.opencontainers.image.revision="42622298fe06f9626d988d60b2bf589bd8f850e8"
+LABEL org.opencontainers.image.revision="cfe123f26fc7071981fe949cb16cd5a08a8234f1"
 HEALTHCHECK --interval=5s --timeout=900s --start-period=600s \
   CMD curl -fsS --http1.0 -H 'Host:' http://127.0.0.1:8080/login/index.php | grep -q 'name="logintoken"' || exit 1
 USER www-data

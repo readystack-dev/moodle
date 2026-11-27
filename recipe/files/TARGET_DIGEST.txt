@@ -1,6 +1,6 @@
-image_manifest_digest=sha256:deb5fb50964cc048d1121b4562b98df1ed075bd4e7d25f953317a0c8f81fcb79
-config_digest=sha256:bff6bb87cacd11b490eee04c5295d4c2b5d4c0a18751d5bafd4544a41c09f767
-tag=readystack/moodle:v5.3.0-CE-ubuntu24.04-r9
+image_manifest_digest=sha256:879bc881fbbdf0fee6635ac8775f4beea031775790e7fe28487924a64aec023f
+config_digest=sha256:6cb64af3c8d90e3b04de4985f7a8765988651f9c498be5cb386d985341346284
+tag=readystack/moodle:v5.3.1-CE-ubuntu24.04-r1
 probe_port=8080
 probe_path=/login/index.php
 probe_timeout=900

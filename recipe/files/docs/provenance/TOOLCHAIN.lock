@@ -77,7 +77,7 @@
     }
   ],
   "build_method": "source-rebuild-php",
-  "chain_id": 1243,
+  "chain_id": 1257,
   "dep_bumps": [],
   "expected_residuals": [],
   "images": [
@@ -118,8 +118,8 @@
       "unzip",
       "ca-certificates"
     ],
-    "commit": "42622298fe06f9626d988d60b2bf589bd8f850e8",
-    "commit_epoch": 1791020085,
+    "commit": "cfe123f26fc7071981fe949cb16cd5a08a8234f1",
+    "commit_epoch": 1794451722,
     "php_extensions": [
       "iconv",
       "mbstring",
@@ -152,11 +152,11 @@
       ".git",
       ".github"
     ],
-    "ref": "v5.3.0",
+    "ref": "v5.3.1",
     "repo": "https://github.com/moodle/moodle",
-    "source_date_epoch": 1795543305,
+    "source_date_epoch": 1795614453,
     "source_date_epoch_basis": "release-cut",
-    "source_date_epoch_provenance": "the time release v5.3.0-CE-ubuntu24.04-r9 was cut (2026-11-24T18:01:45Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit 42622298fe06, dated 2026-10-03T09:34:45Z (source.commit_epoch)."
+    "source_date_epoch_provenance": "the time release v5.3.1-CE-ubuntu24.04-r1 was cut (2026-11-25T13:47:33Z), by scripts/retarget.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit cfe123f26fc7, dated 2026-11-12T02:48:42Z (source.commit_epoch)."
   },
-  "version": "v5.3.0"
+  "version": "v5.3.1"
 }

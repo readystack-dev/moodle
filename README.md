@@ -1,12 +1,12 @@
 # Moodle: ReadyStack build kit
 
-The offline build kit for the Docker image `readystack/moodle:v5.3.0-CE-ubuntu24.04-r9`. It holds what the image is built from (upstream source, base images, toolchain, pinned dependencies) and the documents, so the image can be rebuilt with no network access (`docker build --network=none`).
+The offline build kit for the Docker image `readystack/moodle:v5.3.1-CE-ubuntu24.04-r1`. It holds what the image is built from (upstream source, base images, toolchain, pinned dependencies) and the documents, so the image can be rebuilt with no network access (`docker build --network=none`).
 
-- Release: [v5.3.0-CE-ubuntu24.04-r9](https://github.com/readystack-dev/moodle/releases/tag/v5.3.0-CE-ubuntu24.04-r9)
-- Image: [`docker.io/readystack/moodle:v5.3.0-CE-ubuntu24.04-r9`](https://hub.docker.com/r/readystack/moodle/tags), manifest digest `sha256:deb5fb50964cc048d1121b4562b98df1ed075bd4e7d25f953317a0c8f81fcb79`
+- Release: [v5.3.1-CE-ubuntu24.04-r1](https://github.com/readystack-dev/moodle/releases/tag/v5.3.1-CE-ubuntu24.04-r1)
+- Image: [`docker.io/readystack/moodle:v5.3.1-CE-ubuntu24.04-r1`](https://hub.docker.com/r/readystack/moodle/tags), manifest digest `sha256:879bc881fbbdf0fee6635ac8775f4beea031775790e7fe28487924a64aec023f`
 - Product page: https://readystack.dev/products/moodle
 - Source and build recipe: https://readystack.dev/products/moodle/recipe
-- Build trail: https://readystack.dev/products/moodle/trail/v5.3.0-CE-ubuntu24.04-r9
+- Build trail: https://readystack.dev/products/moodle/trail/v5.3.1-CE-ubuntu24.04-r1
 - Defects: this repository's Issues (defects recorded from 25 November 2026 on) and https://readystack.dev/defects.html?product=moodle
 
 ## The image
@@ -39,7 +39,7 @@ Moodle is distributed under its upstream licence (GPL-3.0-or-later); the kit con
 
 ## Download
 
-From the [v5.3.0-CE-ubuntu24.04-r9 release](https://github.com/readystack-dev/moodle/releases/tag/v5.3.0-CE-ubuntu24.04-r9): `ReadyStack-moodle-v5.3.0-CE-ubuntu24.04-r9.tar.gz` (370.6 MB), SHA-256 `ee940ac2bed46dc094ff5aee332d4cef9c8d25886ac29d49b6e6f105d5435c0b`.
+From the [v5.3.1-CE-ubuntu24.04-r1 release](https://github.com/readystack-dev/moodle/releases/tag/v5.3.1-CE-ubuntu24.04-r1): `ReadyStack-moodle-v5.3.1-CE-ubuntu24.04-r1.tar.gz` (370.8 MB), SHA-256 `dc5a538213d2767ae9ffb002ff40d5b4343b9d33d370a7dcffd2ffed8fd9c74c`.
 
 ```sh
 sha256sum --check --ignore-missing SHA256SUMS
@@ -51,18 +51,18 @@ The rebuild statement is signed with the ReadyStack release key. Check the signa
 
 ```sh
 cosign verify-blob --key https://readystack.dev/keys/cosign.pub \
-  --bundle ReadyStack-moodle-v5.3.0-CE-ubuntu24.04-r9.rebuild.json.sigstore ReadyStack-moodle-v5.3.0-CE-ubuntu24.04-r9.rebuild.json
+  --bundle ReadyStack-moodle-v5.3.1-CE-ubuntu24.04-r1.rebuild.json.sigstore ReadyStack-moodle-v5.3.1-CE-ubuntu24.04-r1.rebuild.json
 ```
 
 Unpack with `-p` so file modes are kept, then follow the kit's own README.md and docs/REBUILD.md:
 
 ```sh
-tar -xpzf ReadyStack-moodle-v5.3.0-CE-ubuntu24.04-r9.tar.gz
-cd v5.3.0-CE-ubuntu24.04-r9
+tar -xpzf ReadyStack-moodle-v5.3.1-CE-ubuntu24.04-r1.tar.gz
+cd v5.3.1-CE-ubuntu24.04-r1
 less README.md docs/REBUILD.md
 ```
 
-The build trail (`ReadyStack-moodle-v5.3.0-CE-ubuntu24.04-r9.trail.json`, signed the same way, and its Markdown copy) records how this release was built and checked.
+The build trail (`ReadyStack-moodle-v5.3.1-CE-ubuntu24.04-r1.trail.json`, signed the same way, and its Markdown copy) records how this release was built and checked.
 
 ## This repository
 
