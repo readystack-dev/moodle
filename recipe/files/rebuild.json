@@ -16,16 +16,16 @@
     "context": ".",
     "dockerfile": "Dockerfile.offline.pinned",
     "mtime_policy": "clamp",
-    "source_date_epoch": 1795614453,
-    "tree_hash": "sha256:078a1b2ed1818ddb36c2ec65c5e45d2fdd2e69d2b1168c80cd2ebe4a21aff60f"
+    "source_date_epoch": 1795644309,
+    "tree_hash": "sha256:134f22610c6eb7bc3abe8f5e43dfb1685aaa4a4695759b8b30bf7645dbaffc94"
   },
   "probe": {
     "skip": "this image needs db (not part of this archive); boot it with your own services as the admin handbook describes"
   },
   "schema": "readystack-rebuild-bundle/v0.1",
   "subject": {
-    "config_digest": "sha256:6cb64af3c8d90e3b04de4985f7a8765988651f9c498be5cb386d985341346284",
-    "image_manifest_digest": "sha256:879bc881fbbdf0fee6635ac8775f4beea031775790e7fe28487924a64aec023f",
-    "name": "docker.io/readystack/moodle:v5.3.1-CE-ubuntu24.04-r1"
+    "config_digest": "sha256:d86f6828fe7da6497a95f1b5034ce3a45e1df0afc06ecf163ae66bbe245ac6ed",
+    "image_manifest_digest": "sha256:e4eb38b4f393108f2e2f2dae5e08f827957d03f77ecde56da2ba254518d8d108",
+    "name": "docker.io/readystack/moodle:v5.3.1-CE-ubuntu24.04-r2"
   }
 }

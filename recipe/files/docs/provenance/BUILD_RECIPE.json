@@ -1,7 +1,7 @@
 {
   "schema": "kitforge.build_recipe.v1",
   "slug": "moodle",
-  "image": "readystack/moodle:v5.3.1-CE-ubuntu24.04-r1",
+  "image": "readystack/moodle:v5.3.1-CE-ubuntu24.04-r2",
   "build_method": "source-rebuild-php",
   "source": {
     "repo": "https://github.com/moodle/moodle",
@@ -52,8 +52,8 @@
       }
     ],
     "_app_copies_note": "Copy the WHOLE Moodle tree to /var/www/html \u2014 the app spans root-level admin/ (incl admin/cli/install.php), lib/, config-dist.php AND public/ (the webroot). NO composer vendor/ dir to copy (Moodle's runtime PHP libs are already in-tree under public/lib/). NO composer_install_cmd => the renderer emits no composer step. NO frontend block => no npm/grunt (AMD assets pre-built in the tag).",
-    "source_date_epoch": 1795614453,
-    "source_date_epoch_provenance": "the time release v5.3.1-CE-ubuntu24.04-r1 was cut (2026-11-25T13:47:33Z), by scripts/retarget.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit cfe123f26fc7, dated 2026-11-12T02:48:42Z (source.commit_epoch).",
+    "source_date_epoch": 1795644309,
+    "source_date_epoch_provenance": "the time release v5.3.1-CE-ubuntu24.04-r2 was cut (2026-11-25T22:05:09Z), by scripts/rerelease-agenda.py: ReadyStack dates an image by when its release was packaged (owner 2026-11-10), recorded here once and used by every rebuild of the release; it builds upstream commit cfe123f26fc7, dated 2026-11-12T02:48:42Z (source.commit_epoch).",
     "commit": "cfe123f26fc7071981fe949cb16cd5a08a8234f1",
     "source_date_epoch_basis": "release-cut",
     "commit_epoch": 1794451722
